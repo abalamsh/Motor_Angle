@@ -9,3 +9,9 @@ then user run motor by click Run/turn on button. these functions do it by Save_D
 4. Run_Motors ; php file that show values of motors angles by fetch data from  database and update each motor status to ON '1'
 
 look to Screenshots to know how this page work
+
+<img src="Screen Shot-1.png" >
+<img src="Screen Shot-3.png" >
+<img src="Screen Shot-4.png" >
+<img src="Screen Shot-6.png" >
+<img src="Screen Shot-7.png" >
