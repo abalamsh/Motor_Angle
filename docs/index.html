@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+
+    <!--CSS-->
+    <style>
+        /* Make slider bigger and place on center */
+        input[type="range"] {
+            width: 500px;
+            align-content: center;
+            margin-left: 50px;
+        }
+
+        /* change color of submit, border shape and font size also font type */
+        input[type="submit"] {
+            border: none;
+            border-radius: 15px;
+            padding: 28px 44px;
+            background-color: rgba(67, 114, 243, 0.678);
+            font-size: 18px;
+            font-family: fantasy;
+        }
+
+
+
+        .label {
+            color: white;
+
+        }
+    </style>
+
+    <!--javascript-->
+    <script type="text/javascript">
+
+        /* functions to change number when move slider*/
+
+
+        function rangeValue() {
+            var Range = document.getElementById("motor1");
+            var output = document.getElementById("first");
+            output.innerHTML = Range.value;
+            document.getElementById("firstMotor").value = Range.value;
+
+            Range.oninput = function () {
+                output.innerHTML = this.value;
+                document.getElementById("firstMotor").value = this.value;
+            }
+        }
+
+        function rangeValue2() {
+            var Range = document.getElementById("motor2");
+            var output = document.getElementById("second");
+            output.innerHTML = Range.value;
+            document.getElementById("secondMotor").value = Range.value;
+
+            Range.oninput = function () {
+                output.innerHTML = this.value;
+                document.getElementById("secondMotor").value = this.value;
+            }
+        }
+
+        function rangeValue3() {
+            var Range = document.getElementById("motor3");
+            var output = document.getElementById("third");
+            output.innerHTML = Range.value;
+            document.getElementById("thirdMotor").value = Range.value;
+
+            Range.oninput = function () {
+                output.innerHTML = this.value;
+                document.getElementById("thirdMotor").value = this.value;
+            }
+        }
+
+        function rangeValue4() {
+            var Range = document.getElementById("motor4");
+            var output = document.getElementById("fourth");
+            output.innerHTML = Range.value;
+            document.getElementById("fourthMotor").value = Range.value;
+
+            Range.oninput = function () {
+                output.innerHTML = this.value;
+                document.getElementById("fourthMotor").value = this.value;
+            }
+        }
+
+        function rangeValue5() {
+            var Range = document.getElementById("motor5");
+            var output = document.getElementById("fifth");
+            output.innerHTML = Range.value;
+            document.getElementById("fifthMotor").value = Range.value;
+
+            Range.oninput = function () {
+                output.innerHTML = this.value;
+                document.getElementById("fifthMotor").value = this.value;
+            }
+        }
+
+        function rangeValue6() {
+            var Range = document.getElementById("motor6");
+            var output = document.getElementById("sixth");
+            output.innerHTML = Range.value;
+            document.getElementById("sixthMotor").value = Range.value;
+
+            Range.oninput = function () {
+                output.innerHTML = this.value;
+                document.getElementById("sixthMotor").value = this.value;
+            }
+        }
+
+
+
+
+    </script>
+
+
+    <title>Control</title>
+
+
+</head>
+
+<!--change color page -->
+
+<body style="background-image: linear-gradient(to  right, #373B44, #302b63,#373B44)">
+
+    <!--------------add image and place it on center--------------------->
+    <h1 style="text-align: center;"><img src="https://image.flaticon.com/icons/png/512/4882/4882946.png" width="260">
+    </h1>
+    <!------add prograph to make some spaces----------->
+    <p style="margin-bottom: 100px; text-align:center;">
+
+    </p>
+
+    <!------- create table without border to organize------------->
+    <table border="0" style="width:60%; height: 30%;" align="center">
+        <tr>
+            <!------Send data to Save_Data.php and open it in new page------>
+            <th>
+                <form action="Save_Data.php" method="POST" target="#">
+                    <input type="submit" value="حفظ">
+            </th>
+
+            <th colspan="3" rowspan="2">
+
+                <!-------------------------Sliders------------------------------------->
+                <input type="hidden" value="0" name="motor1_angle" id="firstMotor">
+                <label class="label" id="first">0</label>
+                <input id="motor1" value="0" type="range" min="0" max="180" oninput="rangeValue()">
+                <label style="color: aliceblue;">المحرك 1</label><br><br>
+                <input type="hidden" value="0" name="motor2_angle" id="secondMotor">
+                <label class="label" id="second">0</label>
+                <input id="motor2" value="0" type="range" min="0" max="180" oninput="rangeValue2()">
+                <label style="color: aliceblue;">المحرك 2</label><br><br>
+                <input type="hidden" value="0" name="motor3_angle" id="thirdMotor">
+                <label class="label" id="third">0</label>
+                <input id="motor3" value="0" type="range" min="0" max="180" oninput="rangeValue3()">
+                <label style="color: aliceblue;">المحرك 3</label><br><br>
+                <input type="hidden" value="0" name="motor4_angle" id="fourthMotor">
+                <label class="label" id="fourth">0</label>
+                <input id="motor4" value="0" type="range" min="0" max="180" oninput="rangeValue4()">
+                <label style="color: aliceblue;">المحرك 4</label><br><br>
+                <input type="hidden" value="0" name="motor5_angle" id="fifthMotor">
+                <label class="label" id="fifth">0</label>
+                <input id="motor5" value="0" type="range" min="0" max="180" oninput="rangeValue5()">
+                <label style="color: aliceblue;">المحرك 5</label><br><br>
+                <input type="hidden" value="0" name="motor6_angle" id="sixthMotor">
+                <label class="label" id="sixth">0</label>
+                <input id="motor6" value="0" type="range" min="0" max="180" oninput="rangeValue6()">
+                <label style="color: aliceblue;">المحرك 6</label><br><br>
+
+                </form>
+
+            </th>
+
+        </tr>
+
+        <tr>
+            <td align="center">
+                <!----Send data to Save_Data.php and open it in new page ---->
+                <form action="Run_Motors.php" method="POST" target="##">
+
+                    <input type="submit" value="تشغيل" style="background-color:rgb(190, 43, 73)" id="Run"
+                        onclick="colorChange()">
+
+                </form>
+            </td>
+
+
+        </tr>
+    </table>
+</body>
+
+</html>
